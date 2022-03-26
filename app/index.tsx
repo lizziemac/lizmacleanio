@@ -16,6 +16,10 @@ export const App = () => {
     return <div/>
   };
 
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('Development mode enabled');
+  }
+
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <>

@@ -13,6 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),    // the output path will be ./github-battle/dist
     filename: 'bundle_index.js',              // the name of the file to be placed in the path
+    clean: true,
   },
   module: {
     rules: [                                  // define how to convert files
