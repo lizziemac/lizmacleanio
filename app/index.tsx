@@ -5,8 +5,8 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 
 import { GlobalStyles } from "./styles";
-import { getTheme } from "./utils/themes";
-import { useTheme } from "./utils/hooks/useTheme";
+import { getTheme } from "app/utils/themes";
+import { useTheme } from "app/utils/hooks/useTheme";
 
 import Pages from './pages';
 
