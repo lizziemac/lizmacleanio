@@ -1,4 +1,4 @@
-interface Theme {
+export interface Theme {
   primary: string;
   complementary: string;
   primaryborder: string;
