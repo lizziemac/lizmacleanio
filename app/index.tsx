@@ -2,37 +2,28 @@ import React, { useState } from "react";
 import * as ReactDOM from "react-dom";
 
 import { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
 import { GlobalStyles } from "./styles";
 import { getTheme } from "./utils/themes";
 import { useTheme } from "./utils/hooks/useTheme";
-import './index.css';
-import ToggleButton from './common/components/ToggleButton';
+
+import Pages from './pages';
 
 export const App = () => {
-  const [theme, toggleTheme, isMounted] = useTheme();
+  const { theme, toggleTheme, isMounted } = useTheme();
 
   if (!isMounted) {
     return <div/>
   };
 
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('Development mode enabled');
-  }
-
   return (
-    <ThemeProvider theme={getTheme(theme)}>
-      <>
+    <BrowserRouter>
+      <ThemeProvider theme={getTheme(theme)}>
         <GlobalStyles/>
-        <div className="App">
-          <header className="App-header">
-          Welcome!
-          <p>Here is a code example: <code>a = b * c</code></p>
-          </header>
-          <ToggleButton handleToggle={() => toggleTheme()}></ToggleButton>
-        </div>
-      </>
-    </ThemeProvider>
+        <Pages toggleTheme={toggleTheme}/>
+      </ThemeProvider>
+    </BrowserRouter>
   )
 };
 
