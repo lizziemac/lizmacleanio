@@ -1,6 +1,3 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -9,6 +6,10 @@ module.exports = merge(common, {
   devtool: 'source-map',
   devServer: {
     open: true,
-    port: 3000
+    port: 3000,
+    historyApiFallback: true  // redirects 404s to index.html
+  },
+  output: {
+    publicPath: '/',          // specify base path for all assets in the app
   },
 });

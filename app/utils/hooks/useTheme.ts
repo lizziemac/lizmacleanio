@@ -5,6 +5,10 @@
 import { useEffect, useState } from 'react';
 import { ThemeMode } from  '../themes';
 
+export const getTheme = (): ThemeMode => {
+  return window.localStorage.getItem('theme') as ThemeMode;
+}
+
 export const useTheme = () => {
   const [theme, setTheme] = useState<ThemeMode>('light');
   const [isMounted, setIsMounted] = useState<boolean>(false)
@@ -14,7 +18,8 @@ export const useTheme = () => {
     setTheme(mode)
   };
 
-  const themeToggler = (): void => {
+  const toggleTheme = (): void => {
+    console.log(theme)
     theme === 'light' ? setMode('dark') : setMode('light')
   };
 
@@ -24,5 +29,5 @@ export const useTheme = () => {
     setIsMounted(true)
   }, []);
 
-  return [theme, themeToggler, isMounted] as const;
+  return { theme, toggleTheme, isMounted } as const;
 };

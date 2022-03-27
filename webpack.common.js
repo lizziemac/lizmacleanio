@@ -4,12 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './app/index.tsx',                      // root file of the module
   target: 'web',
-  mode: 'development',
-  devtool: 'source-map',
-  devServer: {
-    open: true,
-    port: 3000
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),    // the output path will be ./github-battle/dist
     filename: 'bundle_index.js',              // the name of the file to be placed in the path
@@ -28,5 +22,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'app/index.html'              // add index.html into dist/
     })
-  ]
+  ],
 }
