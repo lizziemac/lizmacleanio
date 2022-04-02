@@ -1,6 +1,8 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'source-map',
@@ -12,4 +14,9 @@ module.exports = merge(common, {
   output: {
     publicPath: '/',          // specify base path for all assets in the app
   },
+  plugins: [
+    new ESLintWebpackPlugin({
+      extensions: ['.ts', '.tsx', '.js']
+    })
+  ]
 });
