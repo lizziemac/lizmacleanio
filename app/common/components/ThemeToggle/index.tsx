@@ -9,11 +9,11 @@ interface ToggleProps {
 
 const Toggle = ({ handleToggle }: ToggleProps): ReactElement => {
   return (
-    <Button onClick={() => handleToggle()} >
+    <Button onClick={(): void => handleToggle()} >
       {
         getTheme() === 'dark'
-        ? '🌙'
-        : '☀️'
+          ? '🌙'
+          : '☀️'
       }
     </Button>
   );
