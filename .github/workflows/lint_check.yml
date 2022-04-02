@@ -4,11 +4,8 @@
 name: Linting CI
 
 on:
-  push:
-    branches:
-      - '!*-release'
   pull_request:
-    branches: [ main ]
+    types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
   build:
