@@ -8,8 +8,8 @@ module.exports = merge(common, {
   devtool: 'source-map',
   devServer: {
     open: true,
-    port: 3000,
-    historyApiFallback: true  // redirects 404s to index.html
+    port: 1337,
+    historyApiFallback: true,  // redirects 404s to index.html
   },
   output: {
     publicPath: '/',          // specify base path for all assets in the app

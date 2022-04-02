@@ -1,10 +1,11 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import { Theme } from './utils/themes';
 
-export const GlobalStyles = createGlobalStyle<any>`
+export const GlobalStyles = createGlobalStyle<DefaultTheme>`
   body {
     margin: 0;
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.complementary};
+    background: ${({ theme }: {theme: Theme}): string => theme.primary};
+    color: ${({ theme }: {theme: Theme}): string => theme.complementary};
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.50s linear;
   }
@@ -26,4 +27,4 @@ export const GlobalStyles = createGlobalStyle<any>`
     justify-content: center;
     font-size: calc(10px + 2vmin);
   }
-`
+`;
