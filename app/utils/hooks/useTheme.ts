@@ -7,27 +7,26 @@ import { ThemeMode } from  '../themes';
 
 export const getTheme = (): ThemeMode => {
   return window.localStorage.getItem('theme') as ThemeMode;
-}
+};
 
-export const useTheme = () => {
+export const useTheme = (): {theme: ThemeMode, toggleTheme: () => void, isMounted: boolean} => {
   const [theme, setTheme] = useState<ThemeMode>('light');
-  const [isMounted, setIsMounted] = useState<boolean>(false)
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   const setMode = (mode: ThemeMode): void => {
-    window.localStorage.setItem('theme', mode as ThemeMode)
-    setTheme(mode)
+    window.localStorage.setItem('theme', mode);
+    setTheme(mode);
   };
 
   const toggleTheme = (): void => {
-    console.log(theme)
-    theme === 'light' ? setMode('dark') : setMode('light')
+    theme === 'light' ? setMode('dark') : setMode('light');
   };
 
   useEffect(() => {
     const localTheme: ThemeMode = window.localStorage.getItem('theme') as ThemeMode;
-    localTheme && setTheme(localTheme)
-    setIsMounted(true)
+    localTheme && setTheme(localTheme);
+    setIsMounted(true);
   }, []);
 
-  return { theme, toggleTheme, isMounted } as const;
+  return { theme, toggleTheme, isMounted };
 };

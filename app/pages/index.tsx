@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 
 import About from './About';
@@ -10,7 +11,7 @@ interface PagesProps {
   toggleTheme: () => void;
 }
 
-const Pages = (props: PagesProps) => (
+const Pages = (props: PagesProps): ReactElement => (
   <div>
     <Routes>
       <Route path="/" element={
