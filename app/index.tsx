@@ -17,6 +17,13 @@ export const App = (): ReactElement => {
     return <div/>;
   }
 
+  setTimeout(() => {
+    // The preload class prevents flashing of white to the dark mode bg by
+    // preventing all transitions in the body. Removing the preload class
+    // re-enables transitions
+    document.body.classList.remove('preload');
+  }, 0.1);
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={getTheme(theme)}>
