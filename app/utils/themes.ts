@@ -18,7 +18,7 @@ const h1MediaFontSize = 'calc(16px + 2vmin)';
 
 // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FFFFFF
 export const lightTheme: Theme = {
-  primaryColor: '#FFF',
+  primaryColor: '#fcfcfc',
   primaryLightColor: '#FFF',
   primaryDarkColor: '#cccccc',
   textColor: '#363537',
