@@ -22,8 +22,12 @@ module.exports = {
     "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
     "indent": ["error", 2],
     "linebreak-style": 1,
+    "max-len": ["warn", { "code": 120 }],
     "no-console": ["warn", { allow: ["warn", "error"] }],
     "no-debugger": "warn",
+    "no-restricted-imports": ["error", {
+      "patterns": ["../../*"]
+    }],
     "no-var": "error",
     "no-trailing-spaces": "warn",
     "object-shorthand": ["error", "always"],

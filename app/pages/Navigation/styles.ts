@@ -4,29 +4,28 @@ import { Link } from 'react-router-dom';
 import { Theme } from 'app/utils/themes';
 
 export const Nav = styled.nav`
-  font-size: 18px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  height: 80px;
-  background-color: ${({ theme }: {theme: Theme}): string => theme.complementary};
+  align-items: center;
+  background-color: ${({ theme }: {theme: Theme}): string => theme.primaryDarkColor};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 8vh;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  transition: background-color 1s ease;
+  z-index: 999;
+
+  div:first-child {
+    margin-right: auto;
+  }
 `;
 
 export const NavItem = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  font-size: 2rem;
-  color: ${({ theme }: {theme: Theme}): string => theme.primary};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: ${({ theme }: {theme: Theme}): string => theme.h1FontSize};
+  color: ${({ theme }: {theme: Theme}): string => theme.textColor};
   padding: 1rem 2rem;
-  height: 100%;
-  transition: all .2s ease;
 
   &:hover {
     color: ${({ theme }: {theme: Theme}): string => theme.hover};
@@ -34,13 +33,10 @@ export const NavItem = styled(Link)`
   }
   &:active {
     transform: traslateY(3rem);
-    color: ${({ theme }: {theme: Theme}): string => theme.hover};
+    color: ${({ theme }: {theme: Theme}): string => theme.textColor};
   }
 
   @media only screen and (max-width:1000px){
-    display: block;
-    padding: 3rem;
-    text-align: center;
-    transition: all .2s ease;
+    font-size: ${({ theme }: {theme: Theme}): string => theme.h1MediaFontSize};
   }
 `;

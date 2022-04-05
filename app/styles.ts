@@ -1,13 +1,26 @@
 import { createGlobalStyle, DefaultTheme } from 'styled-components';
-import { Theme } from './utils/themes';
+import { Theme } from 'app/utils/themes';
 
 export const GlobalStyles = createGlobalStyle<DefaultTheme>`
+  .preload {
+    transition: background-color 0s !important;
+    -webkit-transition: background-color 0s !important;
+    -moz-transition: background-color 0s !important;
+    -ms-transition: background-color 0s !important;
+    -o-transition: background-color 0s !important;
+  }
+  
   body {
     margin: 0;
-    background: ${({ theme }: {theme: Theme}): string => theme.primary};
-    color: ${({ theme }: {theme: Theme}): string => theme.complementary};
+    background-color: ${({ theme }: {theme: Theme}): string => theme.primaryColor};
+    color: ${({ theme }: {theme: Theme}): string => theme.textColor};
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
-    transition: all 0.50s linear;
+    transition: background-color 1.5s linear;
+
+    @media only screen and (max-width:1000px){
+      font-size: ${({ theme }: {theme: Theme}): string => theme.mediaFontSize};
+    }
+    
   }
 
   code {
@@ -25,6 +38,6 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
+    font-size: ${({ theme }: {theme: Theme}): string => theme.fontSize};
   }
 `;
