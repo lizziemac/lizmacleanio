@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,33 +10,28 @@ import { useTheme } from 'app/utils/hooks/useTheme';
 
 import Pages from './pages';
 
-export const App = (): ReactElement => {
+export const App = ({ callback }: { callback: () => void}): ReactElement => {
   const { theme, toggleTheme, isMounted } = useTheme();
 
   if (!isMounted) {
     return <div/>;
   }
 
-  setTimeout(() => {
-    // The preload class prevents flashing of white to the dark mode bg by
-    // preventing all transitions in the body. Removing the preload class
-    // re-enables transitions
-    document.body.classList.remove('preload');
-  }, 0.1);
-
   return (
     <BrowserRouter>
       <ThemeProvider theme={getTheme(theme)}>
         <GlobalStyles/>
-        <Pages toggleTheme={toggleTheme}/>
+        <div ref={callback}>
+          <Pages toggleTheme={toggleTheme}/>
+        </div>
       </ThemeProvider>
     </BrowserRouter>
   );
 };
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('app')
+    <App callback={(): void => document.body.classList.remove('preload')}/>
+  </React.StrictMode>
 );
