@@ -29,7 +29,10 @@ export const App = ({ callback }: { callback: () => void}): ReactElement => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
+const root = ReactDOM.createRoot(
+  document.getElementById('app')
+  || document.createElement('div')  // for testing purposes
+);
 root.render(
   <React.StrictMode>
     <App callback={(): void => document.body.classList.remove('preload')}/>
