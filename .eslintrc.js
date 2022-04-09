@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ["/*.*"],  // ignore top-level files
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,

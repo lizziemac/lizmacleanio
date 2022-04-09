@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     -ms-transition: background-color 0s !important;
     -o-transition: background-color 0s !important;
   }
-  
+
   body {
     margin: 0;
     background-color: ${({ theme }: {theme: Theme}): string => theme.primaryColor};
@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     @media only screen and (max-width:1000px){
       font-size: ${({ theme }: {theme: Theme}): string => theme.mediaFontSize};
     }
-    
+
   }
 
   code {
