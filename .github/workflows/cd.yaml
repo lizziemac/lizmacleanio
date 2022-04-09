@@ -1,4 +1,4 @@
-name: Build static files and push to dist-build branch
+name: Continuous Deployment
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Building
 
     steps:
       - name: Checkout
@@ -22,7 +23,7 @@ jobs:
         run: |
           npm run build
 
-      - name: Push to dist-build branch 
+      - name: Push to dist-build branch
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: dist-build
