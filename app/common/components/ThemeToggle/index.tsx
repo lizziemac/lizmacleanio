@@ -13,7 +13,11 @@ interface ToggleProps {
 
 const Toggle = ({ handleToggle }: ToggleProps): ReactElement => {
   return (
-    <Button onClick={(): void => handleToggle()} >
+    <Button
+      aria-label='Toggle theme'
+      aria-description="Toggles the site's theme between dark and light mode"
+      onClick={(): void => handleToggle()}
+    >
       {
         getTheme() === 'dark'
           ? <SunIcon />
