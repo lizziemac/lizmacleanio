@@ -15,7 +15,7 @@ const Toggle = ({ handleToggle }: ToggleProps): ReactElement => {
   return (
     <Button
       aria-label='Toggle theme'
-      aria-description="Toggles the site's theme between dark and light mode"
+      aria-details='Toggles the theme between dark and light mode'
       onClick={(): void => handleToggle()}
     >
       {
