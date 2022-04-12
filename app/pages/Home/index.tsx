@@ -1,14 +1,15 @@
+import { translate, PAGES } from 'app/utils/localize';
 import { ReactElement } from 'react';
 
 const Home = (): ReactElement => {
   return (
     <div>
-      <header className="App-header">
-        Welcome!
-        <p>Check out this code formatting:<br/>
+      <h1 className="App-header">
+        {translate(PAGES.HOME.TITLE)}
+        <p>{translate(PAGES.HOME.SUBTITLE)}<br/>
           <code>my_list = [ key for key in item_dict.keys() ]</code>
         </p>
-      </header>
+      </h1>
     </div>
   );
 };

@@ -20,7 +20,7 @@ describe('Pages component', () => {
     expect(screen.getByText('Welcome!')).toBeInTheDocument();
   });
 
-  it('displays "About Me" on Home page', () => {
+  it('displays "About Liz" on Home page', () => {
     history.push('/about');
     render(
       <Router location={history.location} navigator={history} navigationType={history.action}>
@@ -28,7 +28,7 @@ describe('Pages component', () => {
       </Router>,
     );
 
-    expect(screen.getByText('About Me')).toBeInTheDocument();
+    expect(screen.getByText('About Liz')).toBeInTheDocument();
   });
 
   it('displays "Oops! Page not found!" when provided an invalid path', () => {

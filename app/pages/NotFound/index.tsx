@@ -1,9 +1,10 @@
 import { ReactElement } from 'react';
+import { translate, PAGES } from 'app/utils/localize';
 
 const NotFound = (): ReactElement => {
   return (
     <div>
-      <h2>Oops! Page not found!</h2>
+      <h1>{translate(PAGES.NOT_FOUND.TITLE)}</h1>
     </div>
   );
 };
