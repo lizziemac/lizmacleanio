@@ -9,6 +9,7 @@ import { getTheme } from 'app/utils/themes';
 import { useTheme } from 'app/utils/hooks/useTheme';
 
 import Pages from './pages';
+import { getLocale } from './utils/localize';
 
 export const App = ({ callback }: { callback: () => void}): ReactElement => {
   const { theme, toggleTheme, isMounted } = useTheme();
@@ -16,6 +17,9 @@ export const App = ({ callback }: { callback: () => void}): ReactElement => {
   if (!isMounted) {
     return <div/>;
   }
+
+  // Set language tag to the current user's language
+  document.documentElement.setAttribute('lang', getLocale());
 
   return (
     <BrowserRouter>

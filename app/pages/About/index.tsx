@@ -1,9 +1,10 @@
 import { ReactElement } from 'react';
+import { translate, PAGES } from 'app/utils/localize';
 
 const About = (): ReactElement => {
   return (
     <div>
-      <h2>About Me</h2>
+      <h1>{translate(PAGES.ABOUT.TITLE)}</h1>
     </div>
   );
 };
