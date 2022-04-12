@@ -24,7 +24,7 @@ describe('ThemeToggle component', () => {
 
     const toggleBtn = wrapper.getByLabelText('Toggle theme');
     fireEvent.click(toggleBtn);
-    expect(mockHandleToggle).toBeCalledTimes(1);
+    expect(mockHandleToggle).toHaveBeenCalledTimes(1);
   });
 
   it('shows the moon icon when in light mode', () => {
@@ -35,7 +35,7 @@ describe('ThemeToggle component', () => {
       <ToggleTheme handleToggle={mockHandleToggle} />
     );
 
-    expect(getItemSpy).toBeCalledTimes(1);
+    expect(getItemSpy).toHaveBeenCalledTimes(1);
     expect(wrapper.getByLabelText('Moon icon')).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe('ThemeToggle component', () => {
     const wrapper = render(
       <ToggleTheme handleToggle={mockHandleToggle} />
     );
-    expect(getItemSpy).toBeCalledTimes(1);
+    expect(getItemSpy).toHaveBeenCalledTimes(1);
     expect(wrapper.getByLabelText('Sun icon')).toBeInTheDocument();
   });
 
