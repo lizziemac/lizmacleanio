@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'webpack.dev.js'
+      - 'jest.config.js'
+      - '.gitignore'
+      - '.eslint*'
+      - '.husky'
 
 jobs:
   build:
