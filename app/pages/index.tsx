@@ -15,7 +15,7 @@ const Pages = (props: PagesProps): ReactElement => (
   <div>
     <Routes>
       <Route path="/" element={
-        <div className="App">
+        <div>
           <Navigation toggleTheme={props.toggleTheme}/>
           <Outlet />
         </div>

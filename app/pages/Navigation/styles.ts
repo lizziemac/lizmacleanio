@@ -6,14 +6,19 @@ import { Theme } from 'app/utils/themes';
 export const Nav = styled.nav`
   align-items: center;
   background-color: ${({ theme }: {theme: Theme}): string => theme.primaryDarkColor};
+  height: calc(${({ theme }: {theme: Theme}): string => theme.h1FontSize} * 2);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   display: flex;
-  height: 8vh;
   justify-content: flex-end;
   position: sticky;
   top: 0;
   transition: background-color 1s ease;
   z-index: 999;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width:1000px){
+    height: calc(${({ theme }: {theme: Theme}): string => theme.h1MediaFontSize} * 2);
+  }
 
   div:first-child {
     margin-right: auto;
