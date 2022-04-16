@@ -4,8 +4,11 @@
 name: Continuous Integration
 
 on:
+  push:
+    # Run when a development branch is updated
+    branches: [ '*', '!main', '!dist-build' ]
   pull_request:
-    types: ['opened', 'edited', 'reopened', 'synchronize']
+    types: ['reopened']
 
 jobs:
   ci:
