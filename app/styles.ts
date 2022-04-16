@@ -23,6 +23,10 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
 
   }
 
+  h1 {
+    text-align: center;
+  }
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     padding: 0.2em 0.4em;
@@ -31,18 +35,5 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     background-color: ${({ theme }: {theme: Theme}): string => theme.primaryDarkColor};
     transition: background-color 1.5s ease;
     border-radius: 6px;
-  }
-
-  .App {
-    text-align: center;
-  }
-
-  .App-header {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: ${({ theme }: {theme: Theme}): string => theme.fontSize};
   }
 `;
