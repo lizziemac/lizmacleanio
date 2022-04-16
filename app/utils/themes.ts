@@ -11,10 +11,13 @@ export interface Theme {
   h1MediaFontSize: string;
 }
 
+// Desktop
 const fontSize = 'calc(10px + 2vmin)';
-const mediaFontSize = 'calc(20px + 2vmin)';
 const h1FontSize = 'calc(16px + 2vmin)';
-const h1MediaFontSize = 'calc(26px + 2vmin)';
+
+// Mobile
+const mediaFontSize = 'calc(20px + 2vmin)';
+const h1MediaFontSize = 'calc(40px + 2vmin)';
 
 // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FFFFFF
 export const lightTheme: Theme = {
