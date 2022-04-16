@@ -6,7 +6,7 @@ import { Theme } from 'app/utils/themes';
 export const Nav = styled.nav`
   align-items: center;
   background-color: ${({ theme }: {theme: Theme}): string => theme.primaryDarkColor};
-  height: calc(${({ theme }: {theme: Theme}): string => theme.h1FontSize} * 2);
+  min-height: ${({ theme }: {theme: Theme}): string => theme.h1FontSize};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: flex-end;
@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   flex-wrap: wrap;
 
   @media only screen and (max-width:1000px){
-    height: calc(${({ theme }: {theme: Theme}): string => theme.h1MediaFontSize} * 2);
+    min-height: ${({ theme }: {theme: Theme}): string => theme.h1MediaFontSize};
   }
 
   div:first-child {
@@ -28,6 +28,7 @@ export const Nav = styled.nav`
 export const NavItem = styled(Link)`
   text-decoration: none;
   font-weight: bold;
+  min-height: inherit;
   font-size: ${({ theme }: {theme: Theme}): string => theme.h1FontSize};
   color: ${({ theme }: {theme: Theme}): string => theme.textColor};
   padding: 1rem 2rem;

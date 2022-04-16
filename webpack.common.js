@@ -12,7 +12,8 @@ module.exports = {
   module: {
     rules: [                                  // define how to convert files
       { test: /\.(tsx|ts)$/, use: 'ts-loader', exclude: /node_modules/ },
-      { test: /\.(css)$/, use: ['style-loader', 'css-loader']}
+      { test: /\.(css)$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.(jpe?g|png|gif)$/, type: 'asset/resource' }
     ]
   },
   resolve: {
