@@ -22,7 +22,13 @@ const MoonIcon = (): ReactElement => {
 
   return (
     <div aria-label='Moon icon'>
-      <motion.svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 50 50'>
+      <motion.svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='1em'
+        height='1em'
+        viewBox='0 0 50 50'
+        style={{ display: 'block' }}
+      >
         <motion.path
           d={
             'M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 '

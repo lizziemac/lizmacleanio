@@ -6,9 +6,7 @@ name: Continuous Integration
 on:
   push:
     # Run when a development branch is updated
-    branches: [ '*', '!main', '!dist-build' ]
-  pull_request:
-    types: ['reopened']
+    branches-ignore: [ 'main', 'dist-build' ]
 
 jobs:
   ci:
