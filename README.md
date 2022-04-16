@@ -11,3 +11,27 @@ a pointillism piece)
 4. Implement accessibility
 5. Implement internationalization (from a proof of concept POV, unfortunately
 I'm only fluent in English but I'll try!)
+
+# Run Locally
+
+```sh
+npm run start
+```
+
+## Running Tests
+
+```sh
+npm test
+```
+
+## Running Linting
+
+```sh
+npm run lint
+```
+
+## Compile for Production
+
+```sh
+npm run build
+```
