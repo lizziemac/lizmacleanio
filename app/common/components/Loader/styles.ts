@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { Theme } from 'app/utils/themes';
 
 const Loading = styled.div`
-  min-height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
