@@ -15,7 +15,7 @@ export const App = ({ callback }: { callback: () => void}): ReactElement => {
   const { theme, toggleTheme, isMounted } = useTheme();
 
   if (!isMounted) {
-    return <div/>;
+    return <div>Loading</div>;
   }
 
   // Set language tag to the current user's language

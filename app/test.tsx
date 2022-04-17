@@ -10,6 +10,9 @@ describe('App component', () => {
     render(<App callback={(): void => {}}/>); // eslint-disable-line  @typescript-eslint/no-empty-function
     const message = 'Welcome!';
 
+    const lazyLoader = await screen.findByText(/please wait/i);
+    expect(lazyLoader).toBeInTheDocument();
+
     expect(await screen.findByText(message)).toBeInTheDocument();
   });
 

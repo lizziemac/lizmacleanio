@@ -2,6 +2,10 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 import { Theme } from 'app/utils/themes';
 
 export const GlobalStyles = createGlobalStyle<DefaultTheme>`
+  .smooth {
+    background-color: ${({ theme }: {theme: Theme}): string => theme.primaryColor};
+  }
+
   .preload {
     transition: background-color 0s !important;
     -webkit-transition: background-color 0s !important;
