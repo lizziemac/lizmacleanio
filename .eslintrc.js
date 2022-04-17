@@ -3,6 +3,12 @@ module.exports = {
   env: {
     'jest/globals': true
   },
+  overrides: [
+    {
+      files: ['app/**/styles.ts'],
+      rules: {'i18next/no-literal-string': ['off']}
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
@@ -12,6 +18,7 @@ module.exports = {
   plugins: [
     'eslint-plugin-react',
     '@typescript-eslint',
+    'i18next',
     'jest',
     'jsx-a11y',
     'styled-components-a11y',
@@ -57,6 +64,15 @@ module.exports = {
     '@typescript-eslint/no-unsafe-call': 'warn',
     '@typescript-eslint/no-unsafe-member-access': 'warn',
     '@typescript-eslint/no-unsafe-return': 'warn',
+    // i18next rules
+    'i18next/no-literal-string': [
+      'error',
+      {
+        'markupOnly': true,
+        'validateTemplate': true,
+        'ignoreAttribute': ['as', 'to', 'path'],
+      }
+    ],
     // Jest rules
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',

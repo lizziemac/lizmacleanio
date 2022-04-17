@@ -1,4 +1,4 @@
-import React, { ReactElement, Suspense } from 'react';
+import { ReactElement, Suspense } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 
 import { DEFAULT_DELAY_MS } from 'app/common/constants';
@@ -25,8 +25,8 @@ const Pages = (props: PagesProps): ReactElement => (
         </>
       }>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path='about' element={<About />} />
+        <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>
   </Suspense>

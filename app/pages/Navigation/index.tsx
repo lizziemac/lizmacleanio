@@ -14,7 +14,7 @@ const Navigation = (props: NavigationProps): ReactElement => {
     <Nav>
       <NavItem as='div'><ThemeToggle handleToggle={(): void => props.toggleTheme()} /></NavItem>
       <NavItem to="/">{translate(PAGES.HOME.NAV_LINK)}</NavItem>
-      <NavItem to="/about">{translate(PAGES.ABOUT.NAV_LINK)}</NavItem>
+      <NavItem to='/about'>{translate(PAGES.ABOUT.NAV_LINK)}</NavItem>
     </Nav>
   );
 };
