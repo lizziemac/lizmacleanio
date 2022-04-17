@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklizmacleanio=self.webpackChunklizmacleanio||[]).push([[193],{193:(e,n,c)=>{c.r(n),c.d(n,{default:()=>a});var i=c(893),l=c(773);const a=function(){return(0,i.jsx)("div",{children:(0,i.jsx)("h1",{children:(0,l.Iu)(l.q5.ABOUT.TITLE)})})}}}]);
