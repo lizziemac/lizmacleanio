@@ -21,6 +21,7 @@ module.exports = {
     'i18next',
     'jest',
     'jsx-a11y',
+    'custom-lizmacleanio',
     'styled-components-a11y',
   ],
   extends: [
@@ -97,6 +98,7 @@ module.exports = {
           'onKeyUp',
         ],
       },
-    ]
+    ],
+    'custom-lizmacleanio/no-hardcoded-strings': 1,
   }
 };
