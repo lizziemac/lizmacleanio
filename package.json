@@ -8,7 +8,7 @@
     "start": "webpack serve --open --config webpack.dev.js",
     "lint": "eslint ./app",
     "test": "npx jest --watch",
-    "lint:ci": "eslint ./app",
+    "lint:ci": "eslint ./app --max-warnings=0",
     "test:ci": "npx jest"
   },
   "babel": {
