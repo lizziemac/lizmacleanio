@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang='en'>
+  <script>
+    // Reduces flickering by setting the head style to the same
+    // background color as the theme (default theme is light mode)
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      `<style>body{background:${localStorage.getItem('bg-color')}}</style>`
+    )
+  </script>
   <head>
     <title>Liz MacLean</title>
     <link
@@ -8,6 +16,7 @@
       sizes='32x32'
       href='https://mystickermania.com/cdn/stickers/cats/previews-256x256.png'
     >
+  </head>
   <body class='preload'>
     <div id='app'></div>
   </body>

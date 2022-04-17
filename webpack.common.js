@@ -2,11 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './app/index.tsx',                      // root file of the module
+  entry: {
+    index: './app/index.tsx',                 // root file of the module
+  },
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),    // the output path will be ./github-battle/dist
-    filename: 'bundle_index.js',              // the name of the file to be placed in the path
+    filename: '[name].bundle.js',             // the name of the file to be placed in the path
     clean: true,
   },
   module: {
@@ -18,7 +20,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      app: path.resolve(__dirname, 'app/') // added this
+      app: path.resolve(__dirname, 'app/')
     },
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
   },

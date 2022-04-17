@@ -9,6 +9,9 @@ export const COMMON = {
       ALT_LABEL: 'theme_toggle_alt_label',
       ALT_DETAILS: 'theme_toggle_alt_details',
     },
+    LOADER: {
+      MESSAGE: 'loader_message'
+    }
   },
 };
 

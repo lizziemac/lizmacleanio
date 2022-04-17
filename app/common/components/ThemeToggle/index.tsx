@@ -1,3 +1,4 @@
+import { translate, COMMON } from 'app/utils/localize';
 import { ReactElement } from 'react';
 import { getTheme } from 'app/utils/hooks/useTheme';
 
@@ -14,8 +15,8 @@ interface ToggleProps {
 const Toggle = ({ handleToggle }: ToggleProps): ReactElement => {
   return (
     <Button
-      aria-label='Toggle theme'
-      aria-details='Toggles the theme between dark and light mode'
+      aria-label={translate(COMMON.COMPONENTS.THEME_TOGGLE.ALT_LABEL)}
+      aria-details={translate(COMMON.COMPONENTS.THEME_TOGGLE.ALT_DETAILS)}
       onClick={(): void => handleToggle()}
     >
       {

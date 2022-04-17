@@ -8,19 +8,38 @@ import { Router } from 'react-router-dom';
 import Pages from './';
 
 describe('Pages component', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
   const history = createMemoryHistory();
 
-  it('displays "Welcome!" on Home page', () => {
+  it('displays loader when lazy', async () => {
     render(
       <Router location={history.location} navigator={history} navigationType={history.action}>
         <Pages toggleTheme={function (): void { return null; } } />
       </Router>,
     );
 
-    expect(screen.getByText('Welcome!')).toBeInTheDocument();
+    const lazyElement = await screen.findByText(/please wait/i);
+    expect(lazyElement).toBeInTheDocument();
   });
 
-  it('displays "About Liz" on Home page', () => {
+  it('displays "Welcome!" on Home page lazily', async () => {
+    render(
+      <Router location={history.location} navigator={history} navigationType={history.action}>
+        <Pages toggleTheme={function (): void { return null; } } />
+      </Router>,
+    );
+
+    const fallbackLoader = await screen.findByText(/please wait/i);
+    expect(fallbackLoader).toBeInTheDocument();
+    jest.runAllTimers();
+
+    const lazyElement = await screen.findByText('Welcome!');
+    expect(lazyElement).toBeInTheDocument();
+  });
+
+  it('displays "About Liz" on Home page', async () => {
     history.push('/about');
     render(
       <Router location={history.location} navigator={history} navigationType={history.action}>
@@ -28,10 +47,15 @@ describe('Pages component', () => {
       </Router>,
     );
 
-    expect(screen.getByText('About Liz')).toBeInTheDocument();
+    const fallbackLoader = await screen.findByText(/please wait/i);
+    expect(fallbackLoader).toBeInTheDocument();
+    jest.runAllTimers();
+
+    const lazyElement = await screen.findByText('About Liz');
+    expect(lazyElement).toBeInTheDocument();
   });
 
-  it('displays "Oops! Page not found!" when provided an invalid path', () => {
+  it('displays "Oops! Page not found!" when provided an invalid path', async () => {
     history.push('/fake');
     render(
       <Router location={history.location} navigator={history} navigationType={history.action}>
@@ -39,8 +63,13 @@ describe('Pages component', () => {
       </Router>,
     );
 
-    expect(screen.getByText('Oops! Page not found!')).toBeInTheDocument();
+    const fallbackLoader = await screen.findByText(/please wait/i);
+    expect(fallbackLoader).toBeInTheDocument();
+    jest.runAllTimers();
+
+    const lazyElement = await screen.findByText('Oops! Page not found!');
+    expect(lazyElement).toBeInTheDocument();
   });
 
-  afterAll(cleanup);
+  afterEach(cleanup);
 });

@@ -3,7 +3,7 @@
  * by Blessing Krofegha (https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/)
  */
 import { useLayoutEffect, useState } from 'react';
-import { ThemeMode } from  '../themes';
+import { ThemeMode, getTheme as getStaticTheme } from  '../themes';
 
 export const getTheme = (): ThemeMode => {
   return window.localStorage.getItem('theme') as ThemeMode;
@@ -15,6 +15,7 @@ export const useTheme = (): {theme: ThemeMode, toggleTheme: () => void, isMounte
 
   const setMode = (mode: ThemeMode): void => {
     window.localStorage.setItem('theme', mode);
+    window.localStorage.setItem('bg-color', getStaticTheme(mode).primaryColor);
     setTheme(mode);
   };
 
