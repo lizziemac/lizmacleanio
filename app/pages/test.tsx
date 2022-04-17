@@ -17,7 +17,6 @@ describe('Pages component', () => {
       </Router>,
     );
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
     const lazyElement = await screen.findByText('Welcome!');
     expect(lazyElement).toBeInTheDocument();
   });
@@ -30,7 +29,6 @@ describe('Pages component', () => {
       </Router>,
     );
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
     const lazyElement = await screen.findByText('About Liz');
     expect(lazyElement).toBeInTheDocument();
   });
@@ -43,7 +41,6 @@ describe('Pages component', () => {
       </Router>,
     );
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
     const lazyElement = await screen.findByText('Oops! Page not found!');
     expect(lazyElement).toBeInTheDocument();
   });
