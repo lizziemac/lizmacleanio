@@ -24,7 +24,13 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     @media only screen and (max-width:1000px){
       font-size: ${({ theme }: {theme: Theme}): string => theme.mediaFontSize};
     }
+  }
 
+  a {
+    color: ${({ theme }: {theme: Theme}): string => theme.linkColor};
+  }
+  a:visited {
+    color: ${({ theme }: {theme: Theme}): string => theme.linkVisitedColor};
   }
 
   h1 {

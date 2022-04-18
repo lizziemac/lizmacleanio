@@ -30,19 +30,20 @@ export const NavItem = styled(Link)`
   font-weight: bold;
   min-height: inherit;
   font-size: ${({ theme }: {theme: Theme}): string => theme.h1FontSize};
-  color: ${({ theme }: {theme: Theme}): string => theme.textColor};
+  color: ${({ theme }: {theme: Theme}): string => theme.textColor} !important;
   padding: 1rem 2rem;
 
   &:hover {
-    color: ${({ theme }: {theme: Theme}): string => theme.hover};
-    transform: traslateY(-3rem);
+    color: ${({ theme }: {theme: Theme}): string => theme.hover} !important;
   }
   &:active {
-    transform: traslateY(3rem);
-    color: ${({ theme }: {theme: Theme}): string => theme.textColor};
+    color: ${({ theme }: {theme: Theme}): string => theme.textColor} !important;
   }
 
   @media only screen and (max-width:1000px){
     font-size: ${({ theme }: {theme: Theme}): string => theme.h1MediaFontSize};
+    &:hover {
+      color: ${({ theme }: {theme: Theme}): string => theme.textColor} !important;
+    }
   }
 `;

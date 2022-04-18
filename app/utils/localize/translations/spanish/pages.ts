@@ -6,5 +6,6 @@ export default {
   [PAGES.HOME.SUBTITLE]: 'Echa un vistazo a este formato de código',
   [PAGES.ABOUT.TITLE]: 'Acerca de Liz',
   [PAGES.ABOUT.NAV_LINK]: 'Acerca',
-  [PAGES.NOT_FOUND.TITLE]: '¡Ups! Página no encontrada!'
+  [PAGES.NOT_FOUND.TITLE]: '¡Ups! Página no encontrada!',
+  [PAGES.ABOUT.HEADER_IMAGE_ALT]: 'Un dibujo de un gato esponjoso maullando',
 };
