@@ -1,4 +1,4 @@
-import { translate, COMMON } from 'app/utils/localize';
+import i18n, { COMMON } from 'app/utils/localize';
 import { ReactElement } from 'react';
 import Loading, { Ripple } from './styles';
 
@@ -10,7 +10,7 @@ const Loader = (): ReactElement => {
         <div></div>
         <div></div>
       </Ripple>
-      {translate(COMMON.COMPONENTS.LOADER.MESSAGE)}
+      {i18n.t(COMMON.COMPONENTS.LOADER.MESSAGE)}
     </Loading>
   );
 };

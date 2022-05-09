@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { translate, PAGES } from 'app/utils/localize';
+import i18n, { PAGES } from 'app/utils/localize';
 
 import ThemeToggle from 'app/common/components/ThemeToggle';
 import { Nav, NavItem } from './styles';
@@ -13,8 +13,8 @@ const Navigation = (props: NavigationProps): ReactElement => {
   return (
     <Nav>
       <NavItem as='div'><ThemeToggle handleToggle={(): void => props.toggleTheme()} /></NavItem>
-      <NavItem to="/">{translate(PAGES.HOME.NAV_LINK)}</NavItem>
-      <NavItem to='/about'>{translate(PAGES.ABOUT.NAV_LINK)}</NavItem>
+      <NavItem to="/">{i18n.t(PAGES.HOME.NAV_LINK)}</NavItem>
+      <NavItem to='/about'>{i18n.t(PAGES.ABOUT.NAV_LINK)}</NavItem>
     </Nav>
   );
 };

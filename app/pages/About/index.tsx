@@ -3,7 +3,7 @@
  */
 // TODO: re-enable after implementing react-i18next. fun fact! it's not just for Next.js!
 import { ReactElement } from 'react';
-import { translate, PAGES } from 'app/utils/localize';
+import i18n, { PAGES } from 'app/utils/localize';
 
 import poe from 'app/media/dark-poe.png';
 import  { Blurb, BlurbContainer } from 'app/common/components/Blurb';
@@ -11,9 +11,9 @@ import  { Blurb, BlurbContainer } from 'app/common/components/Blurb';
 const About = (): ReactElement => {
   return (
     <div>
-      <h1>{translate(PAGES.ABOUT.TITLE)}</h1>
+      <h1>{i18n.t(PAGES.ABOUT.TITLE)}</h1>
       <BlurbContainer>
-        <img height={500} width={500} src={poe} alt={translate(PAGES.ABOUT.HEADER_IMAGE_ALT)}/>
+        <img height={500} width={500} src={poe} alt={i18n.t(PAGES.ABOUT.HEADER_IMAGE_ALT)}/>
         <Blurb>
           <p>
             Oh hey, you found me! Thanks for being curious (cool) enough to find this
