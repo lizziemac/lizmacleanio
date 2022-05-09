@@ -1,0 +1,14 @@
+{
+  "name": "lizmacleanio-server",
+  "version": "1.0.0",
+  "description": "postgresql server for lizmaclean.io",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liz MacLean",
+  "license": "ISC",
+  "devDependencies": {
+    "hasura-cli": "^2.6.1"
+  }
+}
