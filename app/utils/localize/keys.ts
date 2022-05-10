@@ -25,6 +25,7 @@ export const PAGES = {
     NAV_LINK: 'about_nav_link',
     TITLE: 'about_title',
     HEADER_IMAGE_ALT: 'about_header_image_alt',
+    BLURB_P1: 'about_blurb_p1',
   },
   NOT_FOUND: {
     TITLE: 'not_found_title',
