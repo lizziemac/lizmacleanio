@@ -1,1 +1,1 @@
-"use strict";(self.webpackChunklizmacleanio=self.webpackChunklizmacleanio||[]).push([[451],{451:(e,n,c)=>{c.r(n),c.d(n,{default:()=>a});var i=c(893),l=c(773);const a=function(){return(0,i.jsx)("div",{children:(0,i.jsx)("h1",{children:(0,l.Iu)(l.q5.NOT_FOUND.TITLE)})})}}}]);
+"use strict";(self.webpackChunklizmacleanio=self.webpackChunklizmacleanio||[]).push([[451],{451:(e,l,a)=>{a.r(l),a.d(l,{default:()=>s});var c=a(893),i=a(773);const s=()=>(0,c.jsx)("div",{children:(0,c.jsx)("h1",{children:i.ZP.t(i.q5.NOT_FOUND.TITLE)})})}}]);
