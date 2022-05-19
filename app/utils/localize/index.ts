@@ -1,38 +1,49 @@
 // Locale and Language Code files will live in files in this directory
-import I18n from 'i18n-js';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
 import en from './locales/en';
 import es from './locales/es';
 
-I18n.defaultLocale = 'en-US';
-I18n.fallbacks = true;
+const languageDetectorOptions = {
+  // order and from where user language should be detected
+  order: ['querystring', 'navigator', 'localStorage', 'sessionStorage', 'cookie', 'htmlTag', 'path', 'subdomain'],
 
-// see https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language
-I18n.locale = typeof window !== 'undefined' ? navigator.language : '';
+  // keys or params to lookup language from
+  lookupQuerystring: 'lng',
+  lookupCookie: 'i18next',
+  lookupLocalStorage: 'i18nextLng',
+  lookupSessionStorage: 'i18nextLng',
+  lookupFromPathIndex: 0,
+  lookupFromSubdomainIndex: 0,
 
-I18n.translations = {
-  en,
-  es,
+  // cache user language on
+  caches: ['localStorage', 'cookie'],
+  excludeCacheFor: ['cimode'], // languages to not persist (cookie, localStorage)
+
+  // optional expire and domain for set cookie
+  cookieMinutes: 10,
+  cookieDomain: 'myDomain',
+
+  // optional htmlTag with lang attribute, the default is:
+  htmlTag: document.documentElement,
 };
 
-export const setLocale = (locale: string): void => {
-  I18n.locale = locale;
-};
-export const getUserLocale = (): string => I18n.currentLocale();
-export const getLocale = (): string => {
-  const userLocale = getUserLocale();
-  const fallbackLocale = userLocale.split('-')[0];
-
-  if (Object.keys(I18n.translations).includes(userLocale)) {
-    return userLocale;
-  } else if (Object.keys(I18n.translations).includes(fallbackLocale)) {
-    return fallbackLocale;
-  } else {
-    return I18n.defaultLocale;
-  }
-};
+void i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    debug: false,
+    detection: languageDetectorOptions,
+    resources: {
+      en: { translation: en },
+      es: { translation: es }
+    },
+    fallbackLng: ['en']
+  });
 
 export * from './keys';
 export * from './tools';
 
-export { I18n };
-export default I18n;
+export default i18n;

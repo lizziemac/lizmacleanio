@@ -9,6 +9,8 @@ export interface Theme {
   mediaFontSize: string;
   h1FontSize: string;
   h1MediaFontSize: string;
+  linkColor: string;
+  linkVisitedColor: string;
 }
 
 // Desktop
@@ -31,6 +33,8 @@ export const lightTheme: Theme = {
   mediaFontSize,
   h1FontSize,
   h1MediaFontSize,
+  linkColor: undefined,        // allow default
+  linkVisitedColor: undefined, // allow default
 };
 
 // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=363537
@@ -45,6 +49,8 @@ export const darkTheme: Theme = {
   mediaFontSize,
   h1FontSize,
   h1MediaFontSize,
+  linkColor: '#8EBCFF',        // allow default
+  linkVisitedColor: '#EB9EFF', // allow default
 };
 
 export type ThemeMode = 'light' | 'dark';

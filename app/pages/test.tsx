@@ -39,7 +39,7 @@ describe('Pages component', () => {
     expect(lazyElement).toBeInTheDocument();
   });
 
-  it('displays "About Liz" on Home page', async () => {
+  it('displays "About Me" on Home page', async () => {
     history.push('/about');
     render(
       <Router location={history.location} navigator={history} navigationType={history.action}>
@@ -51,7 +51,7 @@ describe('Pages component', () => {
     expect(fallbackLoader).toBeInTheDocument();
     jest.runAllTimers();
 
-    const lazyElement = await screen.findByText('About Liz');
+    const lazyElement = await screen.findByText('About Me');
     expect(lazyElement).toBeInTheDocument();
   });
 
