@@ -4,6 +4,7 @@ import { Outlet, Route, Routes } from 'react-router-dom';
 import { DEFAULT_DELAY_MS } from 'app/common/constants';
 import Loader from 'app/common/components/Loader';
 import { smoothLazy } from 'app/common/helpers';
+import Footer from './Footer';
 
 
 const Navigation = smoothLazy(() => import('./Navigation'), DEFAULT_DELAY_MS);
@@ -29,6 +30,7 @@ const Pages = (props: PagesProps): ReactElement => (
         <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>
+    <Footer />
   </Suspense>
 );
 

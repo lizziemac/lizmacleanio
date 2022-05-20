@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const BlurbContainer = styled.div`
   display: flex;
   flex-direction: row;
+  padding-bottom: 5em;
 
   @media screen and (max-width:1000px) {
     flex-direction: column;
@@ -15,7 +16,7 @@ export const Blurb = styled.div`
   flex-direction: column;
 
   p {
-    margin-right: 10em;
+    margin: 1em 10em 1em 0em;
   }
 
   @media screen and (max-width:1000px) {

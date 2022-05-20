@@ -14,8 +14,14 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     -o-transition: background-color 0s !important;
   }
 
+  html {
+    height: 100%;
+  }
+
   body {
+    position: relative;
     margin: 0;
+    min-height: 100%;
     background-color: ${({ theme }: {theme: Theme}): string => theme.primaryColor};
     color: ${({ theme }: {theme: Theme}): string => theme.textColor};
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
@@ -45,5 +51,9 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
     background-color: ${({ theme }: {theme: Theme}): string => theme.primaryDarkColor};
     transition: background-color 1.5s ease;
     border-radius: 6px;
+  }
+
+  * {
+    margin: 0;
   }
 `;

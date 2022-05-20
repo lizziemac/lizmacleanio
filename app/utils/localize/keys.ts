@@ -16,6 +16,7 @@ export const COMMON = {
 };
 
 export const PAGES = {
+  FOOTER: 'footer',
   HOME: {
     NAV_LINK: 'home_nav_link',
     TITLE: 'home_title',
