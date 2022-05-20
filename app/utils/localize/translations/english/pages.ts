@@ -1,6 +1,7 @@
 import { PAGES } from 'app/utils/localize/keys';
 
 export default {
+  [PAGES.FOOTER]: '© 2022 Liz MacLean',
   [PAGES.HOME.NAV_LINK]: 'Home',
   [PAGES.HOME.TITLE]: 'Welcome!',
   [PAGES.HOME.SUBTITLE]: 'Check out this code formatting',
