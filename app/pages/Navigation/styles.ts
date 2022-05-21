@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { Theme } from 'app/utils/themes';
 
@@ -25,18 +25,20 @@ export const Nav = styled.nav`
   }
 `;
 
-export const NavItem = styled(Link)`
+export const NavItem = styled(NavLink)`
   text-decoration: none;
-  font-weight: bold;
+  font-weight: none;
   min-height: inherit;
   font-size: ${({ theme }: {theme: Theme}): string => theme.h1FontSize};
   color: ${({ theme }: {theme: Theme}): string => theme.textColor} !important;
   padding: 1rem 2rem;
+  border-bottom: 0.10em solid transparent;
 
   &:hover {
     color: ${({ theme }: {theme: Theme}): string => theme.hover} !important;
   }
-  &:active {
+  &.active {
+    border-bottom: 0.10em solid #0000ff;
     color: ${({ theme }: {theme: Theme}): string => theme.textColor} !important;
   }
 
