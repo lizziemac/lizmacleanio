@@ -1,7 +1,7 @@
 import { PAGES } from 'app/utils/localize/keys';
 
 export default {
-  [PAGES.FOOTER]: '© 2022 Liz MacLean',
+  [PAGES.FOOTER]: '© {{year}} Liz MacLean',
   [PAGES.HOME.NAV_LINK]: 'Home',
   [PAGES.HOME.TITLE]: 'Welcome!',
   [PAGES.HOME.SUBTITLE]: 'Check out this code formatting',
@@ -27,7 +27,7 @@ export default {
   ),
   [PAGES.ABOUT.BLURB_P3]: (
     'If you\'re curious about the fluffy cat in the drawing on this page, his name is Poe! I adopted him '
-    + 'almost four years ago, and he\'s my favorite fluffy friend. His favorite things to do are nap, meow, '
+    + 'in 2018, and he\'s my favorite fluffy friend. His favorite things to do are nap, meow, '
     + 'snuggle, and play with homemade foil balls. He doesn\'t really understand what the internet is, '
     + 'but I think if he knew that\'s where all his treats came from, he\'d think it\'s as cool as I think it is.'
   )
