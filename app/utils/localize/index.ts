@@ -34,16 +34,15 @@ void i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
+    fallbackLng: ['en'],
     debug: false,
     detection: languageDetectorOptions,
     resources: {
       en: { translation: en },
-      es: { translation: es }
+      es: { translation: es },
     },
-    fallbackLng: ['en']
   });
 
 export * from './keys';
-export * from './tools';
 
 export default i18n;
