@@ -15,7 +15,7 @@ export interface Theme {
 
 // Desktop
 const fontSize = 'calc(10px + 2vmin)';
-const h1FontSize = 'calc(16px + 2vmin)';
+const h1FontSize = 'calc(1.5vmin)';
 
 // Mobile
 const mediaFontSize = 'calc(20px + 2vmin)';

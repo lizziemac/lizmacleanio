@@ -12,6 +12,15 @@ a pointillism piece)
 5. Implement internationalization (from a proof of concept POV, unfortunately
 I'm only fluent in English but I'll try!)
 
+# On Initial Download
+
+## Install depedencies
+
+```sh
+npm install
+```
+
+
 # Run Locally
 
 ```sh
