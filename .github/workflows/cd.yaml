@@ -20,9 +20,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v4
 
       - name: Install
         run: npm install
@@ -32,7 +30,7 @@ jobs:
           npm run build
 
       - name: Push to dist-build branch
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: dist-build
           folder: dist
