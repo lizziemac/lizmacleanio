@@ -18,19 +18,23 @@ interface PagesProps {
 
 const Pages = (props: PagesProps): ReactElement => (
   <Suspense fallback={<Loader />}>
-    <Routes>
-      <Route path="/" element={
-        <>
-          <Navigation toggleTheme={props.toggleTheme}/>
-          <Outlet />
-        </>
-      }>
-        <Route index element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='*' element={<NotFound />} />
-      </Route>
-    </Routes>
-    <Footer />
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '105vh' }}>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Navigation toggleTheme={props.toggleTheme}/>
+            <Outlet />
+          </>
+        }>
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='*' element={<NotFound />} />
+        </Route>
+      </Routes>
+      <div style={{ paddingTop: '1em' }}>
+        <Footer />
+      </div>
+    </div>
   </Suspense>
 );
 

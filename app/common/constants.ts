@@ -1,1 +1,1 @@
-export const DEFAULT_DELAY_MS = 1000; // 1 second
+export const DEFAULT_DELAY_MS = 300; // 1 second

@@ -12,7 +12,10 @@ const About = (): ReactElement => {
 
   return (
     <div>
-      <h1>{i18n.t(PAGES.ABOUT.TITLE)}</h1>
+      <h1>
+        <div style={{ height: '2em' }}/>
+        {i18n.t(PAGES.ABOUT.TITLE)}
+      </h1>
       <BlurbContainer>
         <img height={500} width={500} src={poe} alt={i18n.t(PAGES.ABOUT.HEADER_IMAGE_ALT)}/>
         <Blurb>
