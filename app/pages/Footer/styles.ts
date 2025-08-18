@@ -4,8 +4,12 @@ import { Theme } from 'app/utils/themes';
 
 export const Foot = styled.div`
   width: 100%;
+  display: flex;
   position: absolute;
-  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
   bottom: 0;
   margin-top: 0.5em;
   padding-top: 0.5em;
