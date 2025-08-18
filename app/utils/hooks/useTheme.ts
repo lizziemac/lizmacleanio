@@ -6,10 +6,9 @@ import { useLayoutEffect, useState } from 'react';
 import { ThemeMode, getTheme as getStaticTheme } from  '../themes';
 
 export const getTheme = (): ThemeMode => {
-  return (
-    window.localStorage.getItem('theme') as ThemeMode
-    || window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  );
+  const localTheme = window.localStorage.getItem('theme');
+  const defaultTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return (localTheme || defaultTheme) as ThemeMode;
 };
 
 export const useTheme = (): {theme: ThemeMode, toggleTheme: () => void, isMounted: boolean} => {

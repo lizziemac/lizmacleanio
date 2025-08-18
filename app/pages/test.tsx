@@ -7,6 +7,20 @@ import { Router } from 'react-router-dom';
 
 import Pages from './';
 
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation((query: string) => ({
+    matches: query === '(prefers-color-scheme: dark)' ? true : false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+});
+
 describe('Pages component', () => {
   beforeEach(() => {
     jest.useFakeTimers();
