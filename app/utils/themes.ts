@@ -14,7 +14,7 @@ export interface Theme {
 }
 
 // Desktop
-const fontSize = 'calc(10px + 2vmin)';
+const fontSize = '16px';
 const h1FontSize = 'calc(1.5vmin)';
 
 // Mobile

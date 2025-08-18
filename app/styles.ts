@@ -34,10 +34,14 @@ export const GlobalStyles = createGlobalStyle<DefaultTheme>`
 
   a {
     color: ${({ theme }: {theme: Theme}): string => theme.linkColor};
+    @media only screen and (max-width:1000px){
+      font-size: ${({ theme }: {theme: Theme}): string => theme.mediaFontSize};
+    }
   }
   a:visited {
     color: ${({ theme }: {theme: Theme}): string => theme.linkVisitedColor};
   }
+
 
   h1 {
     text-align: center;
