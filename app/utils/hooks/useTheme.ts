@@ -6,11 +6,17 @@ import { useLayoutEffect, useState } from 'react';
 import { ThemeMode, getTheme as getStaticTheme } from  '../themes';
 
 export const getTheme = (): ThemeMode => {
-  return window.localStorage.getItem('theme') as ThemeMode;
+  const preferredTheme = window.localStorage.getItem('theme');
+  const defaultTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return (preferredTheme || defaultTheme) as ThemeMode;
 };
 
 export const useTheme = (): {theme: ThemeMode, toggleTheme: () => void, isMounted: boolean} => {
-  const [theme, setTheme] = useState<ThemeMode>('light');
+  const [theme, setTheme] = useState<ThemeMode>(
+    // on first load/refresh, use system preference...if no local storage value
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
+
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   const setMode = (mode: ThemeMode): void => {
@@ -25,9 +31,11 @@ export const useTheme = (): {theme: ThemeMode, toggleTheme: () => void, isMounte
 
   useLayoutEffect(() => {
     const localTheme: ThemeMode = window.localStorage.getItem('theme') as ThemeMode;
-    localTheme && setTheme(localTheme);
+    if (localTheme !== theme && localTheme !== null) {
+      setMode(localTheme);
+    }
     setIsMounted(true);
-  }, []);
+  }, [window]);
 
   return { theme, toggleTheme, isMounted };
 };
