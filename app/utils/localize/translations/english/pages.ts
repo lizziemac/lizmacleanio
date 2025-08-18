@@ -4,7 +4,8 @@ export default {
   [PAGES.FOOTER]: '© {{year}} Liz MacLean',
   [PAGES.HOME.NAV_LINK]: 'Home',
   [PAGES.HOME.TITLE]: 'Welcome!',
-  [PAGES.HOME.SUBTITLE]: 'Check out this code formatting',
+  [PAGES.HOME.SUBTITLE]: 'Making this personal site has been more stop-motion than Cones of Dunshire - '
+  + 'lots of effort under the hood for a small result. Enjoy this throwback:',
   [PAGES.NOT_FOUND.TITLE]: 'Oops! Page not found!',
   [PAGES.ABOUT.TITLE]: 'About Me',
   [PAGES.ABOUT.NAV_LINK]: 'About',
