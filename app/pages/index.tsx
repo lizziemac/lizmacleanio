@@ -1,16 +1,13 @@
-import { ReactElement, Suspense } from 'react';
+import { ReactElement, Suspense, lazy } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 
-import { DEFAULT_DELAY_MS } from 'app/common/constants';
 import Loader from 'app/common/components/Loader';
-import { smoothLazy } from 'app/common/helpers';
 import Footer from './Footer';
 
-
-const Navigation = smoothLazy(() => import('./Navigation'), DEFAULT_DELAY_MS);
-const Home = smoothLazy(() => import('./Home'), DEFAULT_DELAY_MS);
-const About = smoothLazy(() => import('./About'), DEFAULT_DELAY_MS);
-const NotFound = smoothLazy(() => import('./NotFound'), DEFAULT_DELAY_MS);
+const Navigation = lazy(() => import('./Navigation'));
+const Home = lazy(() => import('./Home'));
+const About = lazy(() => import('./About'));
+const NotFound = lazy(() => import('./NotFound'));
 
 interface PagesProps {
   toggleTheme: () => void;
